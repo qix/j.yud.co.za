@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html><head>
+<title>language proposal: dave - blog - j.yud.co.za</title>
+<link rel="stylesheet" type="text/css" href="../../style.css" />
+</head>
+<body>
+<div id="content">
+  <h1>Language proposal: dave</h1>
+  <p>I've been a long time user of PHP, but have issues with it <a href="http://plasmasturm.org/log/393/">for</a> <a href="https://maurus.net/resources/programming-languages/php/">obvious</a> <a href="http://www.bitstorm.org/edwin/en/php/">reasons</a>. After extensively using Node.js and Python as well as a fair amount of research into other languages I've decided to give writing my own a shot. I'm rather inexperienced in language design (although I do find compilers fascinating), have very little time on my hands at the moment and there are about fifty other options &ndash; as such I don't really expect this to be a resounding success and replace PHP (although I do hope it does). Its an interesting experiment nonetheless.</p>
+
+  <p>The <a href="http://julialang.org/manual/introduction/">principles which guide Julia</a> gave me a very clear picture of their language design. Along similar lines:
+    <ul>
+      <li>Free and open source (MIT licensed)</li>
+      <li>Built-in string encoding (html, url, sql, ...)</li>
+    </ul>
+  </p>
+
+  <p>The easiest way I can think of to explain the language is with some example programs written in it:
+
+<pre><span class="comment">/* hello.dave: A standard hello world program */</span>
+
+<span class="keyword">print </span><span class="string">"Hello, world!"</span>
+</pre>
+
+<pre><span class="comment">/* encoding.dave: A quick look at dave's string encoding */</span>
+var heart = '&lt;3',
+    bobby = "Robert') DROP TABLE Students; --",
+    hello = 'Hello, world!"
+
+<span class="keyword">print</span> heart
+<span class="comment">// &lt;3</span>
+
+<span class="keyword">print</span> <span class="string">"<span class="variable">$heart</span>"</span>
+<span class="comment">// &lt;3</span>
+
+<span class="keyword">print</span> <span class="encoding">html:</span><span class="string">"<span class="variable">$heart</span>"</span>
+<span class="comment">// &amp;lt;3</span>
+
+<span class="keyword">print</span> <span class="encoding">html:</span><span class="string">"&lt;strong&gt;<span class="variable">$heart</span>&lt;/strong&gt;"</span>
+<span class="comment">// &lt;strong&gt;&amp;lt;3&lt;/strong&gt;</span>
+
+<span class="keyword">print</span> <span class="encoding">sql:</span><span class="string">"SELECT * FROM Students WHERE name=<span class="variable">$bobby</span>"</span>
+<span class="comment">// SELECT * FROM Students WHERE name='Robert\') DROP TABLE Students; --'</span>
+
+<span class="keyword">print</span> <span class="encoding">url:</span><span class="string">"http://cowsay.morecode.org/say?format=text&amp;message=<span class="variable">$hello</span>"</span>
+<span class="comment">// http://cowsay.morecode.org/say?format=text&amp;message=Hello%2C+world%21</span>
+
+<span class="keyword">var</span> boldheart = <span class="encoding">html:</span><span class="string">"&lt;strong&gt;<span class="variable">${"&lt;3"}</span>&lt;/strong&gt;"</span>
+<span class="keyword">print</span> <span class="encoding">html:</span><span class="string">"I <span class="variable">$boldheart</span> built-in encodings -- <span class="variable">$heart</span>."</span>
+<span class="comment">// I &lt;strong&gt;&amp;lt;3&lt;/strong&gt; built-in encodings -- &amp;lt;3.</span>
+
+<span class="keyword">print</span> <span class="encoding">html:</span><span class="string">"Double encoded: <span class="variable">${"$boldheart"}</span>."</span>
+<span class="comment">// Double encoded: &amp;lt;strong&amp;gt;&amp;amp;lt;3&amp;lt;/strong&amp;gt;</span>
+</pre>
+
+<pre><span class="comment">/* database.dave: An example web server with blocking database connections */</span>
+
+<span class="keyword">var</span> <span class="variable">redis</span> = import(<span class="string">'redis'</span>).Redis(),
+    <span class="variable">mysql</span> = import(<span class="string">'mysql'</span>).MySQL(server=<span class="string">'localhost'</span>, username=<span class="string">'josh'</span>, password=<span class="string">'abc'</span>, database=<span class="string">'snap'</span>),
+    <span class="variable">http</span> = import(<span class="string">'http'</span>),
+    <span class="variable">url</span> = import(<span class="string">'url'</span>)
+
+
+<span class="variable">http</span>.createServer(<span class="variable">handleResponse</span>).listen(<span class="number">1337</span>, <span class="string">'127.0.0.1'</span>)
+
+
+<span class="keyword">function</span> handleResponse(req, res) {
+  <span class="keyword">var</span> pageviews;
+  <span class="keyword">try</span> {
+    <span class="comment">// The following three lines will return instantly, and will only block once the values are used in output</span>
+    <span class="keyword">var </span><span class="variable">info</span> = mysql.fetchSingle(<span class="encoding">sql:</span><span class="string">"SELECT * FROM person WHERE name=<span class="variable">${url.parse(req.url).query.name}</span>"</span>)
+    <span class="keyword">var </span><span class="variable">pageviewKey</span> = <span class="string">"count-pageviews:<span class="variable">${info.id}</span>"</span> 
+    pageviews = redis.incr(<span class="variable">$pageviewKey</span>)
+  } <span class="keyword">catch</span> (mysql.NoSingleException e) {
+    <span class="variable">res</span>.end(<span class="encoding">html</span>:<span class="string">"Sorry, we couldn't find you in our database :("</span>)
+    <span class="keyword">return</span>
+  }
+
+  <span class="comment">// As we attempt to send the string the interpreter will wait for the mysql query to finish, then the redis one</span>
+  <span class="variable">res</span>.end(<span class="encoding">html</span>:<span class="string">"&lt;h1&gt;Hey <span class="variable">${info.name}</span>&lt;/h1&gt;"</span>:
+         <span class="string">"&lt;p&gt;According to our database you are &lt;strong&gt;<span class="variable">${info.age}</span>&lt;/strong&gt; years old.&lt;/p&gt;"</span>
+         <span class="string">"&lt;p&gt;(you have viewed at this <span class="variable">$pageviews</span> times)&lt;/p&gt;"</span>)
+}
+
+</pre>
+  </p>
+
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,49 @@
+body
+{ 
+  background-color: #CAE6FB;
+  background-attachment: fixed;
+  background-image: url('qix_large.png');
+  background-repeat: no-repeat;
+  background-position: center center; 
+  font-size: 10px; font-family: verdana; color: #666;
+}
+
+div#content {
+  background-color: rgba(234, 250, 255, 0.9);
+  border: 1px dashed #BAD6EB;
+  width: 960px;
+  margin: 50px auto;
+  padding: 15px;
+}
+
+pre {
+  background-color: #333;
+  border: 1px dashed #AAC6DB;
+  width: 898px;
+
+  padding: 10px;
+  margin: 15px;
+
+  color: #eaeaea;
+}
+
+pre .comment {
+  color: #ffbdd8;
+}
+pre .keyword {
+  color: #e3aad6;
+}
+pre .variable {
+}
+pre .encoding {
+  color: #93dfb8;
+}
+pre .string {
+  color: #b5d8eb;
+}
+pre .string .variable {
+  color: #93dfb8;
+}
+
+a, a:visited, a:active { color: #444; } a:hover { color: #000; }
+
