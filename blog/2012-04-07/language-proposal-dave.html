@@ -12,6 +12,10 @@
     <ul>
       <li>Free and open source (MIT licensed)</li>
       <li>Built-in string encoding (html, url, sql, ...)</li>
+      <li>Scoping from javascript (single user thread)</li>
+      <li>Function parameters from python (named, list, dict arguments)</li>
+      <li>Curly-brace language, but no-semicolons</li>
+      <li>Automatic lazy network/file access for easy pipelining</li>
     </ul>
   </p>
 
@@ -23,7 +27,7 @@
 </pre>
 
 <pre><span class="comment">/* encoding.dave: A quick look at dave's string encoding */</span>
-var heart = '&lt;3',
+<span class="keyword">var</span> heart = '&lt;3',
     bobby = "Robert') DROP TABLE Students; --",
     hello = 'Hello, world!"
 
@@ -52,6 +56,35 @@ var heart = '&lt;3',
 <span class="keyword">print</span> <span class="encoding">html:</span><span class="string">"Double encoded: <span class="variable">${"$boldheart"}</span>."</span>
 <span class="comment">// Double encoded: &amp;lt;strong&amp;gt;&amp;amp;lt;3&amp;lt;/strong&amp;gt;</span>
 </pre>
+<pre><span class="comment">/* functions.dave: A little like python */</span>
+<span class="comment">// Using a map just to demonstrate its capability</span>
+<span class="keyword">var</span> toUpperCase = {<span class="string">'a'</span>:<span class="string">'A'</span>,<span class="string">'b'</span>:<span class="string">'B'</span>,<span class="string">'c'</span>:<span class="string">'C'</span>,<span class="string">'d'</span>:<span class="string">'D'</span>,<span class="string">'e'</span>:<span class="string">'E'</span>,<span class="string">'f'</span>:<span class="string">'F'</span>,<span class="string">'g'</span>:<span class="string">'G'</span>,<span class="string">'h'</span>:<span class="string">'H'</span>,<span class="string">'i'</span>:<span class="string">'I'</span>,
+          <span class="string">'j'</span>:<span class="string">'J'</span>,<span class="string">'k'</span>:<span class="string">'K'</span>,<span class="string">'l'</span>:<span class="string">'L'</span>,<span class="string">'m'</span>:<span class="string">'M'</span>,<span class="string">'n'</span>:<span class="string">'N'</span>,<span class="string">'o'</span>:<span class="string">'O'</span>,<span class="string">'p'</span>:<span class="string">'P'</span>,<span class="string">'q'</span>:<span class="string">'Q'</span>,<span class="string">'r'</span>:<span class="string">'R'</span>,<span class="string">'s'</span>:<span class="string">'S'</span>,
+          <span class="string">'t'</span>:<span class="string">'T'</span>,<span class="string">'u'</span>:<span class="string">'U'</span>,<span class="string">'v'</span>:<span class="string">'V'</span>,<span class="string">'w'</span>:<span class="string">'W'</span>,<span class="string">'x'</span>:<span class="string">'X'</span>,<span class="string">'y'</span>:<span class="string">'Y'</span>,<span class="string">'z'</span>:<span class="string">'Z'</span>}
+
+<span class="keyword">var</span> toLowerCase = {v:k for k,v in toUpperCase.items}
+
+<span class="keyword">function</span> transform(letter, map) {
+  <span class="comment">// Non-existant entries are === undefined, similar to javascript</span>
+  <span class="comment">// &lt;a&gt; ?: &lt;b&gt; is equivalent to &lt;a&gt; ? &lt;a&gt; : &lt;b&gt;</span>
+  <span class="keyword">return</span> map[letter] ?: letter
+}
+
+<span class="keyword">function</span> join(seperator, *items) {
+  <span class="keyword">if</span> (!items) <span class="keyword">return</span> <span class="string">''</span>
+  result = items.pop(0)
+  <span class="keyword">for</span> item <span class="keyword">in</span> items: result += <span class="string">"<span class="variable">$seperator</span><span class="variable">$item</span>"</span>
+  <span class="keyword">return</span> result
+}
+
+<span class="keyword">function</span> capitilise(string) {
+  <span class="keyword">return</span> join('', transform(string[:1], map=toUpperCase), *[transform(c, map=toLowerCase) <span class="keyword">for</span> c <span class="keyword">in</span> string[1:]])
+}
+
+params = {'string': 'hello, world!'}
+<span class="keyword">print</span> capitilise(*params)
+</pre>
+  
 
 <pre><span class="comment">/* database.dave: An example web server with blocking database connections */</span>
 
@@ -65,7 +98,7 @@ var heart = '&lt;3',
 
 
 <span class="keyword">function</span> handleResponse(req, res) {
-  <span class="keyword">var</span> pageviews;
+  <span class="keyword">var</span> pageviews
   <span class="keyword">try</span> {
     <span class="comment">// The following three lines will return instantly, and will only block once the values are used in output</span>
     <span class="keyword">var </span><span class="variable">info</span> = mysql.fetchSingle(<span class="encoding">sql:</span><span class="string">"SELECT * FROM person WHERE name=<span class="variable">${url.parse(req.url).query.name}</span>"</span>)
@@ -76,14 +109,27 @@ var heart = '&lt;3',
     <span class="keyword">return</span>
   }
 
-  <span class="comment">// As we attempt to send the string the interpreter will wait for the mysql query to finish, then the redis one</span>
+  <span class="comment">// As we attempt to send the string the interpreter will wait for the redis query to finish</span>
+  <span class="comment">// The MySQL command would have blocked before as its exception was caught above</span>
   <span class="variable">res</span>.end(<span class="encoding">html</span>:<span class="string">"&lt;h1&gt;Hey <span class="variable">${info.name}</span>&lt;/h1&gt;"</span>:
          <span class="string">"&lt;p&gt;According to our database you are &lt;strong&gt;<span class="variable">${info.age}</span>&lt;/strong&gt; years old.&lt;/p&gt;"</span>
          <span class="string">"&lt;p&gt;(you have viewed at this <span class="variable">$pageviews</span> times)&lt;/p&gt;"</span>)
 }
 
 </pre>
-  </p>
+
+<pre><span class="comment">/* pipeline.dave: fetch a lot of data from redis and then process it later */</span>
+<span class="keyword">var</span> <span class="variable">redis</span> = import(<span class="string">'redis'</span>).Redis()
+    <span class="variable">_</span> = import(<span class="string">'mystringlib'</span>)
+
+values = []
+<span class="keyword">for</span> k <span class="keyword">in</span> <span class="keyword">range</span>(1000) {
+  values.push(redis.get("${_.sprintf('count-%04d', k)}"))
+}
+
+<span class="comment">// We'll get to this point before we have retrieved the data from redis</span>
+<span class="keyword">print</span> values.reduce(<span class="keyword">function</span>(sum, x) { <span class="keyword">return</span> sum+x; }, 0)
+</p>
 
 </div>
 

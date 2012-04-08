@@ -5,7 +5,8 @@ body
   background-image: url('qix_large.png');
   background-repeat: no-repeat;
   background-position: center center; 
-  font-size: 10px; font-family: verdana; color: #666;
+  font-size: 14px;
+  font-family: verdana; color: #666;
 }
 
 div#content {
