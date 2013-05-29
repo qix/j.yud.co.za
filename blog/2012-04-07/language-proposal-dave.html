@@ -58,9 +58,9 @@
 </pre>
 <pre><span class="comment">/* functions.dave: A little like python */</span>
 <span class="comment">// Using a map just to demonstrate its capability</span>
-<span class="keyword">var</span> toUpperCase = {<span class="string">'a'</span>:<span class="string">'A'</span>,<span class="string">'b'</span>:<span class="string">'B'</span>,<span class="string">'c'</span>:<span class="string">'C'</span>,<span class="string">'d'</span>:<span class="string">'D'</span>,<span class="string">'e'</span>:<span class="string">'E'</span>,<span class="string">'f'</span>:<span class="string">'F'</span>,<span class="string">'g'</span>:<span class="string">'G'</span>,<span class="string">'h'</span>:<span class="string">'H'</span>,<span class="string">'i'</span>:<span class="string">'I'</span>,
-          <span class="string">'j'</span>:<span class="string">'J'</span>,<span class="string">'k'</span>:<span class="string">'K'</span>,<span class="string">'l'</span>:<span class="string">'L'</span>,<span class="string">'m'</span>:<span class="string">'M'</span>,<span class="string">'n'</span>:<span class="string">'N'</span>,<span class="string">'o'</span>:<span class="string">'O'</span>,<span class="string">'p'</span>:<span class="string">'P'</span>,<span class="string">'q'</span>:<span class="string">'Q'</span>,<span class="string">'r'</span>:<span class="string">'R'</span>,<span class="string">'s'</span>:<span class="string">'S'</span>,
-          <span class="string">'t'</span>:<span class="string">'T'</span>,<span class="string">'u'</span>:<span class="string">'U'</span>,<span class="string">'v'</span>:<span class="string">'V'</span>,<span class="string">'w'</span>:<span class="string">'W'</span>,<span class="string">'x'</span>:<span class="string">'X'</span>,<span class="string">'y'</span>:<span class="string">'Y'</span>,<span class="string">'z'</span>:<span class="string">'Z'</span>}
+<span class="keyword">var</span> toUpperCase = {<span class="string">'a'</span>:<span class="string">'A'</span>, <span class="string">'b'</span>:<span class="string">'B'</span>, <span class="string">'c'</span>:<span class="string">'C'</span>, <span class="string">'d'</span>:<span class="string">'D'</span>, <span class="string">'e'</span>:<span class="string">'E'</span>, <span class="string">'f'</span>:<span class="string">'F'</span>, <span class="string">'g'</span>:<span class="string">'G'</span>, <span class="string">'h'</span>:<span class="string">'H'</span>, <span class="string">'i'</span>:<span class="string">'I'</span>, 
+          <span class="string">'j'</span>:<span class="string">'J'</span>, <span class="string">'k'</span>:<span class="string">'K'</span>, <span class="string">'l'</span>:<span class="string">'L'</span>, <span class="string">'m'</span>:<span class="string">'M'</span>, <span class="string">'n'</span>:<span class="string">'N'</span>, <span class="string">'o'</span>:<span class="string">'O'</span>, <span class="string">'p'</span>:<span class="string">'P'</span>, <span class="string">'q'</span>:<span class="string">'Q'</span>, <span class="string">'r'</span>:<span class="string">'R'</span>, <span class="string">'s'</span>:<span class="string">'S'</span>, 
+          <span class="string">'t'</span>:<span class="string">'T'</span>, <span class="string">'u'</span>:<span class="string">'U'</span>, <span class="string">'v'</span>:<span class="string">'V'</span>, <span class="string">'w'</span>:<span class="string">'W'</span>, <span class="string">'x'</span>:<span class="string">'X'</span>, <span class="string">'y'</span>:<span class="string">'Y'</span>, <span class="string">'z'</span>:<span class="string">'Z'</span>}
 
 <span class="keyword">var</span> toLowerCase = {v:k for k,v in toUpperCase.items}
 
@@ -129,8 +129,13 @@ values = []
 
 <span class="comment">// We'll get to this point before we have retrieved the data from redis</span>
 <span class="keyword">print</span> values.reduce(<span class="keyword">function</span>(sum, x) { <span class="keyword">return</span> sum+x; }, 0)
-</p>
+</pre>
 
+  <div id="footer">
+    &middot;
+    <a href="/">home</a> |
+    <a href="/blog">blog index</a>
+  </div>
 </div>
 
 </body>
