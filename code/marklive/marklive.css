@@ -1,0 +1,11 @@
+.marklive .markdown {
+  color: #CCC;
+}
+
+.marklive h1 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.marklive h1 + .markdown {
+  margin-bottom: 10pt;
+}
