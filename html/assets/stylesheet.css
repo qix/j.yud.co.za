@@ -1,0 +1,132 @@
+body { 
+  background-color: #CAE6FB;
+  background-attachment: fixed;
+  background-image: url('qix_large.png');
+  background-repeat: no-repeat;
+  background-position: center center; 
+  font-size: 14px;
+  font-family: verdana; color: #444;
+
+  margin: 20px;
+  padding: 0;
+}
+
+/**************************************
+ * PHOTO BROWSER 
+ *************************************/
+
+body.photo-browser {
+  background-image: none;
+}
+
+.photo-browser-thumbnail {
+  float: left; 
+  width: 320px;
+  height: 213px;
+}
+
+/**************************************
+ * MAIN WEBSITE
+ *************************************/
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h3 {
+  border-top: 1px solid rgb(224, 240, 245);
+  padding-top: 8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+header {
+  width: 620px;
+  margin: 0 auto;
+  padding: 0 0 0 0;
+}
+
+header h1 {
+  margin: 10px 0;
+  padding: 0;
+}
+
+header h1 a, header h1 a:visited, header h1 a:hover, header h1 a:active {
+  color: #85989f;
+  text-decoration: none;
+}
+
+div#content {
+  background-color: rgba(234, 250, 255, 0.965);
+  border: 1px dashed #BAD6EB;
+  width: 620px;
+  margin: 20px auto 50px auto;
+  padding: 20px 15px;
+}
+
+div#content h1 {
+  margin-top: 0;
+}
+
+div#footer {
+  border-top: 1px dashed #DDD;
+  margin-top: 8px;
+  padding: 8px 0 0 8px;
+  font-size: 13px;
+}
+
+hr {
+  border: 1px solid rgb(224, 240, 245);
+}
+
+blockquote {
+  border-left: 5px solid rgb(214, 230, 235);
+  margin-left: 0;
+  padding-left: 20px;
+}
+
+ul {}
+
+li {
+  margin-top: 12px;
+}
+pre {
+  background-color: #333;
+  border: 1px dashed #AAC6DB;
+  width: 558px;
+
+  word-wrap: break-word;
+  white-space: pre-wrap;
+
+  padding: 10px;
+  margin: 15px;
+
+  color: #eaeaea;
+}
+
+pre .comment {
+  color: #ffbdd8;
+}
+pre .keyword {
+  color: #e3aad6;
+}
+pre .variable {
+}
+pre .encoding {
+  color: #93dfb8;
+}
+pre .string {
+  color: #b5d8eb;
+}
+pre .string .variable {
+  color: #93dfb8;
+}
+
+a, a:visited, a:active { color: #444; } a:hover { color: #000; }
+
