@@ -12,7 +12,7 @@ from util import (
 
 HTML = '/home/josh/code/j.yud.co.za/html'
 
-TAGS = '/home/josh/code/j.yud.co.za/code/jab/tags'
+TAGS = '/home/josh/photo/tags'
 
 PHOTO_HIRES = '/media/internal/photo-high'
 PHOTO_LORES = '/home/josh/photo/low'
@@ -22,15 +22,14 @@ PHOTO_BROWSE = '/home/josh/photo/www'
 S3_LORES = 'http://j-lores.s3-website-us-east-1.amazonaws.com'
 S3_HIRES = 'http://j-hires.s3-website-us-east-1.amazonaws.com'
 S3_THUMB = 'http://j-thumb.s3-website-us-east-1.amazonaws.com'
-S3_WWW = 'http://j-www.s3-website-us-east-1.amazonaws.com'
-S3_BROWSE = 'http://j-www.s3-website-us-east-1.amazonaws.com/photo'
+S3_WWW = 'http://j.yud.co.za.s3-website-us-east-1.amazonaws.com'
+S3_BROWSE = '/photo'
 
 BUCKET_THUMB = 'j-thumb'
 BUCKET_LORES = 'j-lores'
-BUCKET_BROWSE = 'j-www/photo'
+BUCKET_BROWSE = 'j.yud.co.za/photo'
 
-#RESTRICT = ''
-RESTRICT = 'shotwell/'
+RESTRICT = ''
 
 def load_tags(filename):
   tags = set()
@@ -41,11 +40,9 @@ def load_tags(filename):
 def _join(parts):
   return '/'.join(filter(lambda x: x, parts))
 
-tag_delete = load_tags('delete')
-tag_good = load_tags('good')
-
-@task
-def photo_index(input, output, base='', browse_base='', include=None, exclude=set()):
+def photo_page(index_path, paths, browse_base, include, exclude, back=None):
+  input = PHOTO_HIRES
+  output = PHOTO_BROWSE
   template = '''<html>
   <head>
     <link rel="stylesheet" type="text/css" href="%(www)s/assets/stylesheet.css" charset="utf-8" />
@@ -71,30 +68,19 @@ def photo_index(input, output, base='', browse_base='', include=None, exclude=se
   photos = []
 
   total = 0
-  folder = os.path.join(input, base)
-  for filename in sorted(os.listdir(folder)):
-    path = os.path.join(folder, filename)
-    base_path = os.path.join(base, filename)
+  for path in sorted(paths):
+    assert path.startswith(input)
+    base_path = path[len(input) + 1:]
 
     if base_path in exclude:
       continue
 
     if os.path.isdir(path):
-      result = photo_index(
-        input=input,
-        output=output,
-        base=base_path,
-        browse_base=browse_base,
-        include=include,
-        exclude=exclude,
-      )
-      if result:
-        links.append('<a href="%s">%s</a>' % (
-          _join([S3_BROWSE, browse_base, base_path]),
-          filename
-        ))
-
-    if filename.endswith('.jpg') and (include is None or base_path in include):
+      links.append('<a href="%s">%s</a>' % (
+        _join([S3_BROWSE, browse_base, base_path]),
+        os.path.basename(path)
+      ))
+    elif path.endswith('.jpg') and (include is None or base_path in include):
       photos.append(
         '<div class="photo-browser-thumbnail">' +
         '<a href="%s/%s"><img x-base="%s" src="%s/%s"></a>'
@@ -102,21 +88,27 @@ def photo_index(input, output, base='', browse_base='', include=None, exclude=se
         S3_LORES, base_path, base_path, S3_THUMB, base_path,
       ))
 
-  output_folder = _join([output, browse_base, base])
+  output_path = _join([output, browse_base, index_path])
 
-  if not os.path.isdir(output_folder):
-    os.makedirs(output_folder)
+  if not os.path.isdir(os.path.dirname(output_path)):
+    os.makedirs(os.path.dirname(output_path))
 
   if photos or links:
     empty = False
   else:
     empty = True
 
-  if base != '':
+  print 'Writing index for', output_path, len(photos), len(links)
+
+  if index_path != '':
     links.insert(0, '<a href="..">Up one folder</a>')
 
-  print 'Writing index for', output_folder
-  with open(os.path.join(output_folder, 'index.htm'), 'w') as f:
+  #if back:
+  #  links.insert(0, '<a href="%s">Up one folder</a>' % (
+  #    _join([S3_BROWSE, browse_base, base_path]),
+  #  ))
+
+  with open(output_path, 'w') as f:
     f.write(template % {
       'www': S3_WWW,
       'links': '\n'.join(['<li class="photo-browser-directory">%s</li>' % link for link in links]),
@@ -124,6 +116,47 @@ def photo_index(input, output, base='', browse_base='', include=None, exclude=se
     })
 
   return not empty
+
+@task
+def photo_index(base='', browse_base='', include=None, exclude=set()):
+  input = PHOTO_HIRES
+  folder = os.path.join(input, base)
+  paths = []
+
+  for filename in sorted(os.listdir(folder)):
+    path = os.path.join(folder, filename)
+
+    if os.path.isdir(path):
+      result = photo_index(
+        base=_join([base, filename]),
+        browse_base=browse_base,
+        include=include,
+        exclude=exclude,
+      )
+      print path, result
+      if not result:
+        continue
+    paths.append(path)
+
+  all_photos = []
+  for root, dirnames, filenames in os.walk(folder):
+    all_photos.extend([os.path.join(root, filename) for filename in filenames])
+
+  photo_page(
+    index_path=_join([base, 'all.htm']),
+    paths=all_photos,
+    browse_base=browse_base,
+    include=include,
+    exclude=exclude,
+  )
+
+  return photo_page(
+    index_path=_join([base, 'index.htm']),
+    paths=paths,
+    browse_base=browse_base,
+    include=include,
+    exclude=exclude,
+  )
 
 @task
 def photo():
@@ -175,17 +208,22 @@ def photo():
       print 'Skipping:', hires
 
   status('Write photo browser index files')
+  tag_delete = load_tags('delete')
+
   photo_index(
-    PHOTO_THUMB,
-    PHOTO_BROWSE,
     include=set(),
     exclude=tag_delete,
   )
+
+  for filename in os.listdir(TAGS):
+    if filename not in ('delete') and not filename.startswith('.'):
+      photo_index(
+        browse_base=filename,
+        include=load_tags(filename),
+        exclude=tag_delete,
+      )
   photo_index(
-    PHOTO_THUMB,
-    PHOTO_BROWSE,
-    browse_base='good',
-    include=tag_good,
+    browse_base='all',
     exclude=tag_delete,
   )
 
@@ -196,4 +234,4 @@ def photo():
 
 @task
 def upload():
-  local('s3cmd sync %s/ s3://j-www/' % (HTML))
+  local('s3cmd --guess-mime-type sync %s/ s3://j.yud.co.za/' % (HTML))
