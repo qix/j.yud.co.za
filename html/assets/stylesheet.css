@@ -17,12 +17,27 @@ body {
 
 body.photo-browser {
   background-image: none;
+  margin: 0;
+}
+
+.photo-browser-tags textarea {
+  display: none;
+}
+.photo-browser-tagging .photo-browser-tags textarea {
+  display: auto;
 }
 
 .photo-browser-thumbnail {
   float: left; 
   width: 320px;
   height: 213px;
+}
+
+.photo-browser-tagged {
+  background-color: #ff0;
+}
+.photo-browser-tagged img {
+  opacity: 0.5;
 }
 
 /**************************************
