@@ -196,7 +196,7 @@ def photo():
       status('Processing: %s' % hires)
       for path, conversion in [
         (lores, '-quality 75 -resize "2560x1600"'),
-        (thumb, '-quality 60 -resize "320x213"'),
+        (thumb, '-quality 60 -resize "320x213" -gravity "center" -background "black" -extent "320x213"'),
       ]:
         if os.path.exists(path) and os.stat(path).st_size > 0:
           print path, 'already exists. Skipping.'
