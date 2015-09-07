@@ -24,13 +24,11 @@ body.photo-browser {
   display: none;
 }
 .photo-browser-tagging .photo-browser-tags textarea {
-  display: auto;
+  display: block;
 }
 
 .photo-browser-thumbnail {
   float: left; 
-  width: 320px;
-  height: 213px;
 }
 
 .photo-browser-tagged {
