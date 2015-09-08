@@ -22,7 +22,10 @@ $(function() {
     var tagging = false;
     var $tags = $('.photo-browser-tags textarea');
     var writeTags = function() {
-      $tags.text(Object.keys(tagged).join('\n') + '\n');
+      var tags = $('.photo-browser-tagged img').get().map(function(img) {
+        return img.attributes['x-base'].value;
+      });
+      $tags.text(tags.join('\n') + '\n');
     };
     $tags.focus(function() {
       $(this).select();
@@ -35,6 +38,9 @@ $(function() {
       tagging = !tagging;
       $browser.toggleClass('photo-browser-tagging', tagging);
     });
+
+    var lastIndex = null;
+
     $browser.on('click', 'img', function(event) {
       if (!tagging) {
         return;
@@ -42,9 +48,23 @@ $(function() {
 
       var $photo = $(this);
       var $thumbnail = $photo.closest('.photo-browser-thumbnail');
-      var photo = event.currentTarget.attributes['x-base'].value;
-      tagged[photo] = !tagged[photo];
-      $thumbnail.toggleClass('photo-browser-tagged', tagged[photo]);
+      var tagged = !$thumbnail.hasClass('photo-browser-tagged');
+
+      $thumbnail.toggleClass('photo-browser-tagged', tagged);
+
+      var index = $thumbnail.index();
+      if (event.shiftKey && lastIndex !== null) {
+        var low = Math.min(index, lastIndex);
+        var high = Math.max(index, lastIndex);
+        var $thumbnails = $(
+          '.photo-browser-thumbnail:eq(' + low + '),' +
+          '.photo-browser-thumbnail:gt(' + low + '):lt(' + high + '),' +
+          '.photo-browser-thumbnail:eq(' + high + ')'
+        );
+        $thumbnails.toggleClass('photo-browser-tagged', tagged);
+      }
+
+      lastIndex = index;
       writeTags();
       return false;
     });
