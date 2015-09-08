@@ -27,6 +27,7 @@ S3_BROWSE = '/photo'
 
 BUCKET_THUMB = 'j-thumb'
 BUCKET_LORES = 'j-lores'
+BUCKET_HIRES = 'j-hires'
 BUCKET_BROWSE = 'j.yud.co.za/photo'
 
 RESTRICT = ''
@@ -159,6 +160,14 @@ def photo_index(base='', browse_base='', include=None, exclude=set()):
   )
 
 @task
+def s3_sync():
+  status('Sync files to S3')
+  local('s3cmd --acl-public sync %s/%s s3://%s/%s' % (PHOTO_THUMB, '', BUCKET_THUMB, ''))
+  local('s3cmd --acl-public sync %s/ s3://%s/' % (PHOTO_BROWSE, BUCKET_BROWSE))
+  local('s3cmd --acl-public sync %s/%s s3://%s/%s' % (PHOTO_LORES, RESTRICT, BUCKET_LORES, RESTRICT))
+  local('s3cmd --acl-public sync %s/%s s3://%s/%s' % (PHOTO_HIRES, RESTRICT, BUCKET_HIRES, RESTRICT))
+
+@task
 def photo():
   # Rather cruddy force lowercase
   for root, dirnames, filenames in os.walk(PHOTO_HIRES):
@@ -208,29 +217,30 @@ def photo():
       print 'Skipping:', hires
 
   status('Write photo browser index files')
-  tag_delete = load_tags('delete')
+
+  exclude = set()
+  exclude_tags = ('delete', 'private')
+  for tag in exclude_tags:
+    exclude.update(load_tags(tag))
 
   photo_index(
     include=set(),
-    exclude=tag_delete,
+    exclude=exclude,
   )
 
   for filename in os.listdir(TAGS):
-    if filename not in ('delete') and not filename.startswith('.'):
+    if filename not in exclude_tags and not filename.startswith('.'):
       photo_index(
         browse_base=filename,
         include=load_tags(filename),
-        exclude=tag_delete,
+        exclude=exclude,
       )
   photo_index(
     browse_base='all',
-    exclude=tag_delete,
+    exclude=exclude,
   )
 
-  status('Sync files to S3')
-  local('s3cmd --acl-public sync %s/%s s3://%s/%s' % (PHOTO_THUMB, '', BUCKET_THUMB, ''))
-  local('s3cmd --acl-public sync %s/%s s3://%s/%s' % (PHOTO_LORES, RESTRICT, BUCKET_LORES, RESTRICT))
-  local('s3cmd --acl-public sync %s/ s3://%s/' % (PHOTO_BROWSE, BUCKET_BROWSE))
+  s3_sync()
 
 @task
 def upload():
