@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>My Stories</title>
+    <link>http://j.yud.co.za/stories/</link>
+    
+    <image>
+      <url>http://j.yud.co.za/stories/icon.png</url>
+      <title>My Stories</title>
+      <link>http://j.yud.co.za/stories/</link>
+    </image>
+    
+    <atom:link href="http://j.yud.co.za/stories/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description></description>
+    <pubDate>Wed, 21 Oct 2020 14:45:28 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>US West Coast</title>
+      <link>http://j.yud.co.za/stories/2020/10/20/US-West-Coast/</link>
+      <guid>http://j.yud.co.za/stories/2020/10/20/US-West-Coast/</guid>
+      <pubDate>Wed, 21 Oct 2020 01:23:30 GMT</pubDate>
+      
+      <description>&lt;p&gt;In ~Aug 2019 I made plans to fly down to South Africa to hike the &lt;a href=&quot;https://www.hikingsouthafrica.co.za/the-otter-trail/&quot;&gt;Otter Trail&lt;/a&gt;. Due to circumstances out of my control I was forced to change my plans.&lt;/p&gt;
+&lt;p&gt;With the pandemic in full swing I requested ~4 weeks of leave so that I could quarantine in SA before the hike… but that was early on and optimistic. When it became clear I would have to cancel I planned this roadtrip (using three of the four weeks) instead.&lt;/p&gt;</description>
+      
+      
+      
+      
+      
+      
+      <comments>http://j.yud.co.za/stories/2020/10/20/US-West-Coast/#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>
