@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /
+Allow: /blog
+Allow: /talks
+Allow: /projects
+Allow: /$
