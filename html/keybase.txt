@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/jyud
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://j.yud.co.za
+  * I am jyud (https://keybase.io/jyud) on keybase.
+  * I have a public key ASCVAY2m-cHFM5nbuWL9k6EET-O21azYaYnCKSppNGbELgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01206ca0e39f05c50b6be8cc30439c75c2ad7d8e90b4d2ca76af86642f1ae531f2650a",
+      "host": "keybase.io",
+      "kid": "012095018da6f9c1c53399dbb962fd93a1044fe3b6d5acd86989c2292a693466c42e0a",
+      "uid": "0559e210a90142f53a09011f9fc37819",
+      "username": "jyud"
+    },
+    "merkle_root": {
+      "ctime": 1589993386,
+      "hash": "31bb183a5faf949edfd4af7250b264f0bd1ccf1e85384e88c7aa6a9c1ee4f3bb27ecfe9ebf6b9030120818cec3719b4645c558b2f1f2a38d30a1f8808f1bd8ad",
+      "hash_meta": "cb50f7098cfd6f84b243e60882b9eeae9419e846777617930bd4e83f15fd61bc",
+      "seqno": 16358319
+    },
+    "service": {
+      "entropy": "nrMi5/HXDhLA5PbUjuqrFR7i",
+      "hostname": "j.yud.co.za",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.4.2"
+  },
+  "ctime": 1589993469,
+  "expire_in": 504576000,
+  "prev": "6231784a9b175e4dec495af9d3a0c3868b74d8abc75995df72c6cc8797ab1744",
+  "seqno": 52,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEglQGNpvnBxTOZ27li/ZOhBE/jttWs2GmJwikqaTRmxC4Kp3BheWxvYWTESpcCNMQgYjF4SpsXXk3sSVr506DDhot02KvHWZXfcsbMh5erF0TEINpVdft6UH/o0ToHIK8+Uvgdn66jOV3gAnFhz9qRYN3yAgHCo3NpZ8RAYadPqlSqYlNCAxBnUBGB9flCC51tIK+v8zSP+1SJqMayEkTQPZ+Q+CCwlLzxyuGtlpx1wJG78GryZ7t4/4U8C6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJ1EXtme86oaq3KKsPt3AMV2pIPcngiHWi5t0w1FrrqJo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jyud
+
+==================================================================

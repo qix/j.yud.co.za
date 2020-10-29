@@ -1,0 +1,71 @@
+<body>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    div#buttons {
+      padding: 5pt;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+    }
+    button {
+      margin: 5pt;
+      font-size: 40pt;
+      padding: 10pt;
+      display: flex;
+      width: 90%;
+      height: 10%;
+      min-height: 30pt;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+  <div id="loading">
+    Loading...
+  </div>
+  <div id="buttons" style="display: none;">
+    <button onClick="show('flash blue')">flash blue</button>
+    <button onClick="show('flash green')">flash green</button>
+    <button onClick="show('flash red')">flash red</button>
+    <button onClick="show('flash pink')">flash pink</button>
+    <button onClick="show('flash yellow')">flash yellow</button>
+    <button onClick="show('rainbow')">rainbow</button>
+    <button onClick="show('chase')">chase</button>
+    <button onClick="show('flower')">flower</button>
+    <button onClick="show('pulse')">pulse</button>
+    <button onClick="show('random')">random</button>
+    <button onClick="show('on')">on</button>
+    <button onClick="show('off')">off</button>
+  </div>
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyB1BGxuYuHTmKmAJ3oeyWGlZbDNfZgmy70",
+      authDomain: "influential-sky-275518.firebaseapp.com",
+      databaseURL: "https://influential-sky-275518.firebaseio.com",
+      projectId: "influential-sky-275518",
+      storageBucket: "influential-sky-275518.appspot.com",
+      messagingSenderId: "951733055167",
+      appId: "1:951733055167:web:2d387e36267086c9b6200a",
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    function show(message) {
+      firebase.firestore().collection("home-queue").doc("show").set({
+        show: message,
+      });
+    }
+
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("buttons").style.display = "flex";
+    show("flash green");
+  </script>
+</body>
