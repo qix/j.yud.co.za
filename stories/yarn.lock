@@ -508,6 +508,14 @@ hexo-generator-category@^1.0.0:
   dependencies:
     hexo-pagination "1.0.0"
 
+hexo-generator-feed@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/hexo-generator-feed/-/hexo-generator-feed-3.0.0.tgz#4126ef5e308264c42599fb0efdaf88ed11fa599e"
+  integrity sha512-Jo35VSRSNeMitS2JmjCq3OHAXXYU4+JIODujHtubdG/NRj2++b3Tgyz9pwTmROx6Yxr2php/hC8og5AGZHh8UQ==
+  dependencies:
+    hexo-util "^2.1.0"
+    nunjucks "^3.0.0"
+
 hexo-generator-index@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/hexo-generator-index/-/hexo-generator-index-2.0.0.tgz#15e71f4d28ee9d2172e2d77e8d1dba04882edc8f"
@@ -866,6 +874,15 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
+nunjucks@^3.0.0:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/nunjucks/-/nunjucks-3.2.3.tgz#1b33615247290e94e28263b5d855ece765648a31"
+  integrity sha512-psb6xjLj47+fE76JdZwskvwG4MYsQKXUtMsPh6U0YMvmyjRtKRFcxnlXGWglNybtNTNVmGdp94K62/+NjF5FDQ==
+  dependencies:
+    a-sync-waterfall "^1.0.0"
+    asap "^2.0.3"
+    commander "^5.1.0"
+
 nunjucks@^3.2.1:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/nunjucks/-/nunjucks-3.2.2.tgz#45f915fef0f89fbab38c489dc85025f64859f466"
@@ -943,9 +960,9 @@ pretty-hrtime@^1.0.3:
   integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
 
 prismjs@^1.17.1:
-  version "1.22.0"
-  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.22.0.tgz#73c3400afc58a823dd7eed023f8e1ce9fd8977fa"
-  integrity sha512-lLJ/Wt9yy0AiSYBf212kK3mM5L8ycwlyTlSxHBAneXLR0nzFMlZ5y7riFPF3E33zXOF2IH95xdY5jIyZbM9z/w==
+  version "1.23.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.23.0.tgz#d3b3967f7d72440690497652a9d40ff046067f33"
+  integrity sha512-c29LVsqOaLbBHuIbsTxaKENh1N2EQBOHaWv7gkHN4dgRbxSREqDnDbtFJYdpPauS4YCplMSNCABQ6Eeor69bAA==
   optionalDependencies:
     clipboard "^2.0.0"
 
