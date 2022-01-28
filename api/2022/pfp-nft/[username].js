@@ -15,7 +15,7 @@ module.exports = (req, res) => {
     });
 
     return rv.then(({data}) => {
-        const url = data?.profile_image_url;
+        const url = data && data.profile_image_url;
         if (!url) {
             res.json({
                 "name": `PFP @${username}`,
