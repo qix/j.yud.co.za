@@ -54,7 +54,7 @@ Finally that night I wanted to see some Luche Libre. I was planning on just buyi
 
 {% asset_img luche-mike-narmeen.jpg %}
 {% asset_img luche-josh.jpg %}
-<video controls loop autoplay><source src="/stories/2022/11/09/Dia-de-Muertos-2022/luche-fight.mp4" type="video/mp4" />video not supported</video>
+{% youtube c0toIbXyplI %}
 
 Finally before my flight out to Oaxaca I had a little bit of time, I used it to grab some excellent Chilaquiles back at [Cafe Nin](https://goo.gl/maps/fhnojqfyGEyf6FFYA) (last nights tortillas chips, covered in sauce and served for breakfast.)
 
