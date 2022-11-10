@@ -13,7 +13,7 @@ With the pandemic in full swing I requested ~4 weeks of leave so that I could qu
 <img src="/stories/ig-story-assets/ced464cb21215cb33e77824ce44d0d7e.jpg" style="margin: 2px;" title="Posted Sunday October 4 at 8:10pm" width="192" height="397" />
 <img src="/stories/ig-story-assets/d172fc4c97e837f971dbeb78af6abe0b.jpg" style="margin: 2px;" title="Posted Monday October 5 at 5:41pm" width="192" height="397" />
 <img src="/stories/ig-story-assets/dc002afa78fedbc31ae35a17fcf3ac6c.jpg" style="margin: 2px;" title="Posted Tuesday October 6 at 12:47am" width="192" height="397" />
-<video width="192" height="397" style="margin: 2px;" controls loop autoplay><source src="/stories/ig-story-assets/3918574ecbaaf1b9ebdcc7b02d3450be.mp4" type="video/mp4" />video not supported</video>
+<div width="192" height="397">{% youtube HRtePDXvuW4 %}</div>
 <img src="/stories/ig-story-assets/b3bf3c608deac8100d766ef09c587c92.jpg" style="margin: 2px;" title="Posted Tuesday October 6 at 12:52am" width="192" height="397" />
 <img src="/stories/ig-story-assets/ed3203d481d40625f2482308569d642f.jpg" style="margin: 2px;" title="Posted Tuesday October 6 at 12:53am" width="192" height="397" />
 <img src="/stories/ig-story-assets/988bece9feff1fb705692ec5a68df47c.jpg" style="margin: 2px;" title="Posted Tuesday October 6 at 10:55pm" width="192" height="397" />
@@ -35,7 +35,7 @@ With the pandemic in full swing I requested ~4 weeks of leave so that I could qu
 <img src="/stories/ig-story-assets/726d82d7dab0cc0aa6dafc0b62040bd2.jpg" style="margin: 2px;" title="Posted Monday October 12 at 8:02pm" width="192" height="397" />
 <img src="/stories/ig-story-assets/4f5c9a064a9aeb05cc7593301bd23bc2.jpg" style="margin: 2px;" title="Posted Monday October 12 at 8:04pm" width="192" height="397" />
 <img src="/stories/ig-story-assets/0481061550022c2b98c4aae6add61355.jpg" style="margin: 2px;" title="Posted Monday October 12 at 8:05pm" width="192" height="397" />
-<video width="192" height="397" style="margin: 2px;" controls loop autoplay><source src="/stories/ig-story-assets/de75cb211284e4dcd05e69b39d1ab543.mp4" type="video/mp4" />video not supported</video>
+<div width="192" height="397">{% youtube co4VdtofJ1s %}</div>
 <img src="/stories/ig-story-assets/a134dc2e8c1cc138853cf5d597921118.jpg" style="margin: 2px;" title="Posted Monday October 12 at 8:09pm" width="192" height="397" />
 <img src="/stories/ig-story-assets/d9394efe44efb49cf31f0efd3d598560.jpg" style="margin: 2px;" title="Posted Tuesday October 13 at 12:23am" width="192" height="397" />
 <img src="/stories/ig-story-assets/5e4a2ed4f78fce1a76f920a9207e96b1.jpg" style="margin: 2px;" title="Posted Tuesday October 13 at 12:29am" width="192" height="397" />
