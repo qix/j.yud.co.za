@@ -62,3 +62,241 @@ Finally before my flight out to Oaxaca I had a little bit of time, I used it to 
 Last stop before the airport was a market, hoping to find some small Día de Muertos gifts for everyone on my Oaxaca trip, and I found these skulls. Was a little worried but they made the flight!
 
 {% asset_img dia-skulls.jpg }
+
+## Oaxaca
+
+The first day in Oaxaca we just spent wandering around.
+
+{% asset_img oaxaca-1-mayra.jpg }
+{% asset_img oaxaca-1-jalatlaco.jpg }
+{% asset_img oaxaca-1-rainbow.jpg }
+
+For dinner we stopped at [Los Dazantes](https://g.page/danzantesoaxaca)
+
+{% asset_img oaxaca-1-las-dazantes.jpg }
+
+Day two started with a visit to the house I stayed at while I lived there, unfortunately no-one was home.
+{% asset_img oaxaca-2-old-house.jpg %}
+
+Lunch was at [Las Quince Letras](https://goo.gl/maps/WK883VghRHNUdXp59), named for the fifteen letters in it's name, was one of my favourite meals from back when I lived in the city. It's still delicious, but this time I figured out it was because it was only meal there that really tasted fresh. Everything's delicious, but it's all corn based or heavy.
+
+{% asset_img oaxaca-2-chiles-de-agua.jpg %}
+
+{% asset_img parade-1.jpg %}
+{% asset_img parade-2.jpg %}
+{% asset_img parade-3.jpg %}
+{% asset_img parade-4.jpg %}
+{% asset_img parade-5.jpg %}
+{% asset_img parade-6.jpg %}
+{% asset_img parade-7.jpg %}
+{% asset_img parade-8.jpg %}
+
+Finally after the parade the last couple people had landed, and we went out for some drinks as a group.
+
+{% asset_img oaxaca-2-group.jpg %}
+
+### Mitla and Hierve al Agua
+
+On day three finally the pieces I had planned started
+
+{% asset_img mitla-1.jpg %}
+{% asset_img mitla-2.jpg %}
+{% asset_img hierve-1.jpg %}
+{% asset_img hierve-2.jpg %}
+{% asset_img hierve-3.jpg %}
+{% asset_img hierve-4.jpg %}
+
+Fancy mezcal and mike had a shot
+{% asset_img mezcaloteca.jpg %}
+{% youtube c4YPUvsT45U %}
+
+### Mezcal Farm Tour
+
+{% asset_img don-goyo-1.jpg %}
+
+As the cactus ages the leaves open up, you can see evidence of that here
+{% asset_img don-goyo-opening.jpg %}
+
+{% asset_img don-goyo-reggie.jpg %}
+
+Here's a group photo, I was clearly distracted by the dogs
+{% asset_img don-goyo-group.jpg %}
+
+We were lucky to see them distilling
+{% asset_img mezcal-oven-1.jpg %}
+{% asset_img mezcal-distill.jpg %}
+
+Here's where they crush the agave. Little bit cruel.
+
+Tasting their mezcal, plastic
+{% asset_img mezcal-plastic.jpg %}
+
+Chewing on some agave
+{% asset_img mezcal-agave.jpg %}
+
+Mr. Don Goyo himself showing us the bubbles
+{% youtube tUFyzbDw_hc %}
+
+{% asset_img mezcal-snort.jpg %}
+
+I brought three bottles, should have gotten more
+
+Suggestive rock
+{% asset_img waterfall-1.jpg %}
+
+Finally we reached the waterfall
+{% asset_img waterfall-2.jpg %}
+
+Here's the group of us.
+{% asset_img waterfall-group.jpg %}
+
+Our lovely guide brought her dog along, here he is looking royal
+{% asset_img waterfall-dog.jpg %}
+{% asset_img waterfall-dog-2.jpg %}
+
+Once we got back just wandered around looking at art. Our main guide had organised a show
+{% asset_img oaxaca-3-skulls.jpg %}
+
+Mike was adament these wouldn't make good photos. He was right.
+{% asset_img oaxaca-3-uv-1.jpg %}
+{% asset_img oaxaca-3-uv-2.jpg %}
+
+{% asset_img megan-vibes.jpg %}
+
+Mike posed underneath the skull
+{% asset_img mike-skull.jpg %}
+
+I tried, not as well
+{% asset_img josh-skull-jump.jpg %}
+
+I'm not sure why we're showing our butts
+{% asset_img skull-butts.jpg %}
+
+{% asset_img skull-josh-ladies.jpg %}
+
+### Tlacolula market
+
+Next day was a lot more chill
+
+{% asset_img market-meat.jpg %}
+{% asset_img market-insect.jpg %}
+{% asset_img market-altar.jpg %}
+
+{% asset_img market-sugarcane.jpg %}
+
+Mike & Narmeen treated me to a super-fancy dinner at [El Destilado](https://g.page/Destilado)
+
+{% asset_img fancy-1.jpg %}
+{% asset_img fancy-2.jpg %}
+
+### Envia
+
+{% asset_img envia-market-breads.jpg %}
+{% asset_img envia-altar.jpg %}
+{% asset_img envia-machine.jpg %}
+{% asset_img envia-machine-megan.jpg %}
+
+{% asset_img envia-chocolate.jpg %}
+{% asset_img envia-choc-eat-1.jpg %}
+{% asset_img envia-choc-eat-2.jpg %}
+
+{% asset_img envia-tree.jpg %}
+{% asset_img envia-pig.jpg %}
+
+{% asset_img envia-cemetery.jpg %}
+
+{% asset_img envia-grave.jpg %}
+{% asset_img envia-grave-2.jpg %}
+{% asset_img envia-grave-3.jpg %}
+
+I took a walk back with Megan through the streets of Jalatlaco.
+
+{% asset_img jalatlaco-tree.jpg %}
+
+She was looking for inspiration for a tattoo with marigolds inside so we went to take a photo here. Some people there, took this photo of us.
+
+{% asset_img street-art-tattoo.jpg %}
+
+Finally wandered into this street party
+
+{% youtube 3qC4WRqbKBQ %}
+
+### Xoxocotlan
+
+That night we went out to xoxocotlan
+
+{% asset_img xoxo-1.jpg %}
+{% asset_img xoxo-2.jpg %}
+{% asset_img xoxo-3.jpg %}
+{% asset_img xoxo-4.jpg %}
+{% asset_img xoxo-christian.jpg %}
+
+### Walk
+
+{% asset_img sand-1.jpg %}
+{% asset_img sand-2.jpg %}
+
+{% asset_img street-art-1.jpg %}
+{% asset_img street-art-2.jpg %}
+{% asset_img street-art-3.jpg %}
+{% asset_img street-art-4.jpg %}
+{% asset_img street-art-5.jpg %}
+
+Eventually I found this bench
+{% asset_img street-bench.jpg %}
+
+I landed up staying on the bench for a long time, until Mike wandered over and found me there (I sent him a location).
+{% asset_img bench-josh.jpg %}
+
+The then willingly posed in a kissing booth for me
+{% asset_img mike-kiss.jpg %}
+
+The dinner was at the house
+{% asset_img dinner-house-group.jpg %}
+
+Watched a show that night
+{% asset_img skull-cross.jpg %}
+
+{% asset_img model-face.jpg %}
+
+Here's a shot of all of them
+{% asset_img face-models.jpg %}
+
+The show was a little strange.
+{% asset_img show-weird.jpg %}
+
+{% asset_img hambuergesas-1.jpg %}
+{% asset_img hambuergesas-2.jpg %}
+{% asset_img hambuergesas-3.jpg %}
+
+It's a little hard to explain, but they attached fireworks to a cow.
+{% asset_img cow-fireworks.jpg %}
+
+One of the parades went right passed our house, so I went up to the roof to catch this shot
+{% asset_img parade-from-roof.jpg %}
+
+### Last full day
+
+My last full day I spent catching up with everyone, as well as attempting (but not succeeding) in getting my face painted in preparation for the Muerteada that night.
+
+### Muerteada
+
+{% asset_img taxi-art-1.jpg %}
+{% asset_img taxi-art-2.jpg %}
+{% asset_img taxi-art-3.jpg %}
+{% asset_img taxi-art-4.jpg %}
+
+He was good, but the options earlier were better :), he was just in a rush as well.
+{% asset_img mike-karen.jpg %}
+
+{% asset_img muerteada-1.jpg %}
+{% asset_img muerteada-2.jpg %}
+{% asset_img muerteada-3.jpg %}
+{% youtube vc8QpB42De8 %}
+{% youtube ddQo55AqACI %}
+
+We got one shot that night (at 1:30am). I had booked a taxi to the airport at 4am.
+
+{% asset_img group-shot-final.jpg %}
+
+Thanks for reading! I still need to edit and add a lot of text.
