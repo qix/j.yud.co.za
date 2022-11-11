@@ -50,30 +50,34 @@ I got a couple more snaps wandering around the area.
 {% asset_img condesa-cat.jpg %}
 {% asset_img condesa-graffiti.jpg %}
 
+### Luche Libre
+
 Finally that night I wanted to see some Luche Libre. I was planning on just buying tickets but Mike & Narmeen convinced me to join them on an AirBnB experience that included meeting one of the fighters. It was a good idea, and would not have understood what was going on without that.
 
 {% asset_img luche-mike-narmeen.jpg %}
 {% asset_img luche-josh.jpg %}
 {% youtube c0toIbXyplI %}
 
+### Breakfast and Markets
+
 Finally before my flight out to Oaxaca I had a little bit of time, I used it to grab some excellent Chilaquiles back at [Cafe Nin](https://goo.gl/maps/fhnojqfyGEyf6FFYA) (last nights tortillas chips, covered in sauce and served for breakfast.)
 
-{% asset_img chilaquiles.jpg }
+{% asset_img chilaquiles.jpg %}
 Last stop before the airport was a market, hoping to find some small Día de Muertos gifts for everyone on my Oaxaca trip, and I found these skulls. Was a little worried but they made the flight!
 
-{% asset_img dia-skulls.jpg }
+{% asset_img dia-skulls.jpg %}
 
 ## Oaxaca
 
 The first day in Oaxaca we just spent wandering around.
 
-{% asset_img oaxaca-1-mayra.jpg }
-{% asset_img oaxaca-1-jalatlaco.jpg }
-{% asset_img oaxaca-1-rainbow.jpg }
+{% asset_img oaxaca-1-mayra.jpg %}
+{% asset_img oaxaca-1-jalatlaco.jpg %}
+{% asset_img oaxaca-1-rainbow.jpg %}
 
 For dinner we stopped at [Los Dazantes](https://g.page/danzantesoaxaca)
 
-{% asset_img oaxaca-1-las-dazantes.jpg }
+{% asset_img oaxaca-1-las-dazantes.jpg %}
 
 Day two started with a visit to the house I stayed at while I lived there, unfortunately no-one was home.
 {% asset_img oaxaca-2-old-house.jpg %}
