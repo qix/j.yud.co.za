@@ -24,38 +24,52 @@ I decided to spend my time there bouncing between neighboorhoods, trying to get 
 
 Started my day at [Bosque de Chapultepec](https://www.google.com/maps?q=loc:19.4228833,-99.1749944) which is a giant park out there. Really liked this statue, and the cute snail.
 
+<div class="img-grid">
 {% asset_img cdmx-horse.jpg "Meta-horse" %}
 {% asset_img cdmx-cute-snail.jpg "Just snailing around" %}
+</div>
 
 Next stop was [Cafebrería El Péndulo](https://goo.gl/maps/MHFoD1K4owijVZGL9) that was recommended both by Olga and the podcast I was listening to. Coffee shop and bookstore. cute.
 
+<div class="img-grid">
 {% asset_img cdmx-cafebreria.jpg "Cafebreria coffee stop" %}
+</div>
 
 I had lunch plans but was getting hungry so stopped for a snack at [Cafe Nin](https://goo.gl/maps/fhnojqfyGEyf6FFYA). I had a tamale with huitlacoche ("corn smut" in english, I prefer the spanish name). It's flavour is strong mushroom.
 
+<div class="img-grid">
 {% asset_img cdmx-nin-tamale.jpg "Thinking about the SF Tamale lady" %}
+</div>
 
 Since I'll be coming back with Toaster (or Tostado as he'll be known) I checked out a pet store to see the dog food brands, met a cute cat. Went to check the dog park as well which is giant.
 
+<div class="img-grid">
 {% asset_img cdmx-pet-store.jpg "Cat was hiding between the food bags" %}
 {% asset_img dog-park.jpg "Dog park" %}
+</div>
 
 Lunch was at [Expendio de Maiz Sin Nombre](https://goo.gl/maps/G6aQLLhWroA7e4py5) where I met up with a friend, Krista, from NYC. There was no menu, they'd bring out an (always corn based) course, and then afterwards a simple yes/no decided whether you were done. It wasn't cheap but was suuper tasty. I was too distracted to take photos, so here's the starting snack (only photo I got.)
 
+<div class="img-grid">
 {% asset_img sin-nombre.jpg "It is not a good photo." %}
+</div>
 
 I got a couple more snaps wandering around the area.
 
+<div class="img-grid">
 {% asset_img condesa-bench.jpg %}
 {% asset_img condesa-cat.jpg %}
 {% asset_img condesa-graffiti.jpg %}
+</div>
 
 ### Luche Libre
 
 Finally that night I wanted to see some Luche Libre. I was planning on just buying tickets but Mike & Narmeen convinced me to join them on an AirBnB experience that included meeting one of the fighters. It was a good idea, and would not have understood what was going on without that.
 
+<div class="img-grid">
 {% asset_img luche-mike-narmeen.jpg %}
 {% asset_img luche-josh.jpg %}
+</div>
 {% youtube c0toIbXyplI %}
 
 ### Breakfast and Markets
@@ -71,57 +85,78 @@ Last stop before the airport was a market, hoping to find some small Día de Mue
 
 The first day in Oaxaca we just spent wandering around.
 
+<div class="img-grid">
 {% asset_img oaxaca-1-mayra.jpg %}
 {% asset_img oaxaca-1-jalatlaco.jpg %}
 {% asset_img oaxaca-1-rainbow.jpg %}
+</div>
 
 For dinner we stopped at [Los Dazantes](https://g.page/danzantesoaxaca)
 
+<div class="img-grid">
 {% asset_img oaxaca-1-las-dazantes.jpg %}
+</div>
 
 Day two started with a visit to the house I stayed at while I lived there, unfortunately no-one was home.
+
+<div class="img-grid">
 {% asset_img oaxaca-2-old-house.jpg %}
+</div>
 
 Lunch was at [Las Quince Letras](https://goo.gl/maps/WK883VghRHNUdXp59), named for the fifteen letters in it's name, was one of my favourite meals from back when I lived in the city. It's still delicious, but this time I figured out it was because it was only meal there that really tasted fresh. Everything's delicious, but it's all corn based or heavy.
 
+<div class="img-grid">
 {% asset_img oaxaca-2-chiles-de-agua.jpg %}
+</div>
 
-{% asset_img parade-1.jpg %}
-{% asset_img parade-2.jpg %}
+That night we watched a parade
+
+<div class="img-grid">
+{% asset_img parade-2.jpg with%}
 {% asset_img parade-3.jpg %}
 {% asset_img parade-4.jpg %}
-{% asset_img parade-5.jpg %}
 {% asset_img parade-6.jpg %}
-{% asset_img parade-7.jpg %}
 {% asset_img parade-8.jpg %}
+</div>
 
 Finally after the parade the last couple people had landed, and we went out for some drinks as a group.
 
+<div class="img-grid">
 {% asset_img oaxaca-2-group.jpg %}
+</div>
 
 ### Mitla and Hierve al Agua
 
 On day three finally the pieces I had planned started
 
+<div class="img-grid">
 {% asset_img mitla-1.jpg %}
 {% asset_img mitla-2.jpg %}
+</div>
+
+<div class="img-grid">
 {% asset_img hierve-1.jpg %}
-{% asset_img hierve-2.jpg %}
 {% asset_img hierve-3.jpg %}
 {% asset_img hierve-4.jpg %}
+{% asset_img hierve-2.jpg %}
+</div>
 
 Fancy mezcal and mike had a shot
+
+<div class="img-grid">
 {% asset_img mezcaloteca.jpg %}
-{% youtube c4YPUvsT45U %}
+{% asset_img mike-shot.webp %}
+</div>
 
 ### Mezcal Farm Tour
 
-{% asset_img don-goyo-1.jpg %}
-
 As the cactus ages the leaves open up, you can see evidence of that here
-{% asset_img don-goyo-opening.jpg %}
 
+<div class="img-grid">
+{% asset_img don-goyo-opening.jpg %}
 {% asset_img don-goyo-reggie.jpg %}
+{% asset_img don-goyo-1.jpg %}
+</div>al
 
 Here's a group photo, I was clearly distracted by the dogs
 {% asset_img don-goyo-group.jpg %}
@@ -162,56 +197,65 @@ Once we got back just wandered around looking at art. Our main guide had organis
 {% asset_img oaxaca-3-skulls.jpg %}
 
 Mike was adament these wouldn't make good photos. He was right.
+
+<div class="img-grid">
 {% asset_img oaxaca-3-uv-1.jpg %}
 {% asset_img oaxaca-3-uv-2.jpg %}
+</div>
 
+Mike posed underneath the skull. I tried to pose, not as well.
+
+<div class="img-grid">
 {% asset_img megan-vibes.jpg %}
-
-Mike posed underneath the skull
 {% asset_img mike-skull.jpg %}
-
-I tried, not as well
 {% asset_img josh-skull-jump.jpg %}
-
-I'm not sure why we're showing our butts
-{% asset_img skull-butts.jpg %}
-
 {% asset_img skull-josh-ladies.jpg %}
+</div>
 
 ### Tlacolula market
 
 Next day was a lot more chill
 
+<div class="img-grid">
 {% asset_img market-meat.jpg %}
 {% asset_img market-insect.jpg %}
 {% asset_img market-altar.jpg %}
-
 {% asset_img market-sugarcane.jpg %}
+</div>
 
 Mike & Narmeen treated me to a super-fancy dinner at [El Destilado](https://g.page/Destilado)
 
+<div class="img-grid">
 {% asset_img fancy-1.jpg %}
 {% asset_img fancy-2.jpg %}
+</div>
 
 ### Envia
 
+<div class="img-grid">
 {% asset_img envia-market-breads.jpg %}
 {% asset_img envia-altar.jpg %}
 {% asset_img envia-machine.jpg %}
 {% asset_img envia-machine-megan.jpg %}
+</div>
 
+<div class="img-grid">
 {% asset_img envia-chocolate.jpg %}
 {% asset_img envia-choc-eat-1.jpg %}
 {% asset_img envia-choc-eat-2.jpg %}
+</div>
 
+<div class="img-grid">
 {% asset_img envia-tree.jpg %}
 {% asset_img envia-pig.jpg %}
+</div>
 
+<div class="img-grid">
 {% asset_img envia-cemetery.jpg %}
-
 {% asset_img envia-grave.jpg %}
 {% asset_img envia-grave-2.jpg %}
 {% asset_img envia-grave-3.jpg %}
+</div>
 
 I took a walk back with Megan through the streets of Jalatlaco.
 
@@ -229,10 +273,13 @@ Finally wandered into this street party
 
 That night we went out to xoxocotlan
 
+<div class="img-grid">
 {% asset_img xoxo-1.jpg %}
 {% asset_img xoxo-2.jpg %}
 {% asset_img xoxo-3.jpg %}
 {% asset_img xoxo-4.jpg %}
+</div>
+
 {% asset_img xoxo-christian.jpg %}
 
 ### Walk
@@ -240,11 +287,13 @@ That night we went out to xoxocotlan
 {% asset_img sand-1.jpg %}
 {% asset_img sand-2.jpg %}
 
+<div class="img-grid">
 {% asset_img street-art-1.jpg %}
 {% asset_img street-art-2.jpg %}
 {% asset_img street-art-3.jpg %}
 {% asset_img street-art-4.jpg %}
 {% asset_img street-art-5.jpg %}
+</div>
 
 Eventually I found this bench
 {% asset_img street-bench.jpg %}

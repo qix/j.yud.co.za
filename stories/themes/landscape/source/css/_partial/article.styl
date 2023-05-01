@@ -59,11 +59,28 @@
   ul, ol, dl
     margin-top: line-height
     margin-bottom: line-height
+
   img, video
-    max-width: 100%
+    max-width: 50%
     height: auto
     display: block
+    margin: 0.25em auto
+
+  .img-grid
+    display: flex
+    flex-wrap: wrap
+    margin: 0.25em auto
+
+  .img-grid img
+    max-width: 280px
     margin: auto
+
+  .img-grid .video-container
+    position: auto
+    padding-top: (9 / 16 * 100)% // 16:9 ratio
+    height: 0
+    overflow: hidden
+
   iframe
     border: none
   table
