@@ -1,8 +1,11 @@
 ---
 import VestaboardPost from '../../components/VestaboardPost.astro';
 import Layout from '../../layouts/AppLayout.astro';
+
+const { code } = Astro.params;
+
 ---
 
 <Layout>
-	<VestaboardPost />
+	<VestaboardPost code={code} />
 </Layout>

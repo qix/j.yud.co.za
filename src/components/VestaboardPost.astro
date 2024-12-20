@@ -11,6 +11,7 @@ let error = '';
 let useCodes = false;
 let preview = false;
 
+const {code} = Astro.params;
 if (Astro.request.method === "POST") {
 
 	const webhookUrl = import.meta.env.VESTABOARD_POST_WEBHOOK_URL;
@@ -91,7 +92,10 @@ export const prerender = false;
 						</div>
 					</section>
 				) : (
-				<h1>Send a message</h1>
+				<>{ code === 'snugglebutt' ? (
+					<h1>Snugglebutt&apos;s page</h1>
+					<p>Sugarbutt is looking forward to your message &lt;3</p>
+				) : (<h1>Send a message</h1>) }</>
 					<>{ error ? (
 						<div class="error">
 							<p>{error}</p>
