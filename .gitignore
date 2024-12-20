@@ -1,5 +1,6 @@
-*.pyc
-*.sw*
-
-.vercel
 node_modules
+*.tsbuildinfo
+.direnv
+.envrc
+.env
+dist/

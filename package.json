@@ -1,5 +1,17 @@
 {
+  "name": "vestaboard-post",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
   "dependencies": {
-    "twitter-api-v2": "^1.10.0"
+    "@astrojs/vercel": "^8.0.1",
+    "@types/ansi-html": "^0.0.0",
+    "ansi-html": "^0.0.9",
+    "astro": "^5.1.0"
   }
 }
