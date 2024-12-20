@@ -6,6 +6,6 @@ const { code } = Astro.params;
 
 ---
 
-<Layout>
+<Layout title={code === 'snugglebutt' ? 'Send sugarbutt a message': 'Send a message to Josh'}>
 	<VestaboardPost code={code} />
 </Layout>
