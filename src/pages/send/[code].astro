@@ -4,8 +4,12 @@ import Layout from '../../layouts/AppLayout.astro';
 
 const { code } = Astro.params;
 
+let title = 'Send a message to Josh';
+if (code === 'snugglebutt') {
+	title = 'Send sugarbutt a message';
+}
 ---
 
-<Layout title={code === 'snugglebutt' ? 'Send sugarbutt a message': 'Send a message to Josh'}>
+<Layout title={title}>
 	<VestaboardPost code={code} />
 </Layout>
