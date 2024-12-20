@@ -93,8 +93,9 @@ export const prerender = false;
 				<form id="form" method="POST">
 					<textarea name="message">{message}</textarea>
 					<label>
-						<input type="checkbox" name="useCodes" value="useCodes" checked={useCodes} /> Use capital letters for codes: <strong>W</strong>hite, <strong>R</strong>ed, <strong>O</strong>range, <strong>Y</strong>ellow, <strong>G</strong>reen,
-						<strong>B</strong>lue, <strong>V</strong>iolet, b<strong>L</strong>ack
+						<input type="checkbox" name="useCodes" value="useCodes" checked={useCodes} /> Use codes
+						<span class="tip">(<strong>W</strong>hite, <strong>R</strong>ed, <strong>O</strong>range, <strong>Y</strong>ellow, <strong>G</strong>reen,
+						<strong>B</strong>lue, <strong>V</strong>iolet, b<strong>L</strong>ack)</span>
 					</label><br/>
 					<button>Clowncopterize</button>
 				</form>
@@ -170,7 +171,7 @@ export const prerender = false;
 		display: block;
 		flex-direction: column;
 		gap: 16px;
-		width: 800px;
+		width: 520px;
 	}
 
 	#form textarea {
@@ -181,6 +182,10 @@ export const prerender = false;
 		width: 100%;
 		height: 5em;
 		margin: 1em 0;
+	}
+
+	#form .tip {
+		color: #6a6c70;
 	}
 
 	#form button {
@@ -243,27 +248,11 @@ export const prerender = false;
 		border: 1px solid white;
 	}
 
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-	}
 
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
-
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
+	@media screen and (max-width: 640px) {
+		body { 
+			padding: 20px;
 		}
-	}
-
-	@media screen and (max-width: 768px) {
 		#container {
 			display: flex;
 			flex-direction: column;
@@ -275,18 +264,15 @@ export const prerender = false;
 		}
 
 		#form {
-			flex-wrap: wrap;
+			width: 320px;
+		}
+
+		#form .tip {
+			display: block;
 		}
 
 		#form a.button {
 			padding: 14px 18px;
-		}
-
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
 		}
 
 		h1 {
