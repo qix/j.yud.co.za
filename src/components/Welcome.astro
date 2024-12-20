@@ -79,14 +79,18 @@ export const prerender = false;
 		<section id="hero">
 
 				{ sentHtml ? (
+					<h1>Message Sent 🎉</h1>
 					<section id="form">
-						<h1>🎉 Your message has been clowncopterized! 🎉</h1>
 						<pre id="preview" set:html={sentHtml}></pre>
+						<div class="links">
+							<p><a href="?">Send another message</a>
+							</p>
+						</div>
 					</section>
 				) : (
 				<h1>Send a message</h1>
 					<>{ error ? (
-						<div class="box">
+						<div class="error">
 							<p>{error}</p>
 						</div>
 					) : null}</>
@@ -178,6 +182,7 @@ export const prerender = false;
 		padding: 16px;
 		font-size: 16px;
 		border-radius: 10px;
+		box-sizing: border-box;
 		border: 1px solid #e5e7eb;
 		width: 100%;
 		height: 5em;
@@ -241,13 +246,26 @@ export const prerender = false;
 		padding: 6px 8px;
 	}
 
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
+	.error {
+		padding: 12px;
+		background: rgba(220, 220, 220, 0.5);
 		border-radius: 16px;
-		border: 1px solid white;
+		border: 1px solid rgba(0, 0, 0, 0.25);
 	}
 
+	.error p {
+		color: #600b0b;
+	}
+
+	.links {
+		margin: 1em;
+	}
+	.links a {
+		color: #222;
+	}
+	.links a:hover {
+		color: #000;
+	}
 
 	@media screen and (max-width: 640px) {
 		#container {
@@ -261,7 +279,7 @@ export const prerender = false;
 		}
 
 		#form {
-			width: 320px;
+			width: 100%;
 		}
 
 		#form .tip {
