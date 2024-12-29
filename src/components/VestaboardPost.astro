@@ -71,7 +71,7 @@ if (Astro.request.method === "POST") {
 	} catch (err) {
 		invariant(err instanceof Error, 'Expected an error to be an instance of Error');
 		if (err instanceof UnsupportedChar) {
-			error = 'A character in your message is not supported by the board: ' + JSON.stringify(err.char)
+			error = 'A character in your message is not supported by the board: ' + err.char
 		} else {
 			error = 'Error: ' + err.toString();
 		}
