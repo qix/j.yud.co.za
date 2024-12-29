@@ -1,4 +1,5 @@
 ---
+import { string } from "astro:schema";
 import background from "../assets/background.svg";
 import { invariant } from "../jslib/invariant";
 
@@ -7,7 +8,7 @@ import { attemptWrap } from "../jslib/wrap";
 import anyAscii from 'any-ascii';
 
 let sentHtml = "";
-let message = "";
+let inputMessage = "";
 let error = '';
 let useCodes = false;
 let preview = false;
@@ -20,18 +21,20 @@ if (Astro.request.method === "POST") {
 
 	try {
 		const data = await Astro.request.formData();
-		const msg = data.get("message");
+		const dataMessage = data.get("message") || '';
+		invariant(typeof dataMessage === 'string', 'Expected string message');
+		inputMessage = dataMessage;
 
 		preview = data.has('preview');
 		useCodes = data.get('useCodes') ? true : false;
 
-		if (msg) {
-			message = anyAscii(msg.toString());
+		if (inputMessage) {
+			const asciiMessage = anyAscii(inputMessage.toString()).replace('\t', ' ');
 
 			const vb = new Vestaboard();
 
 			const {result, complete} = attemptWrap(
-				useCodes ? message : message.toLowerCase(),
+				useCodes ? asciiMessage : asciiMessage.toLowerCase(),
 				Vestaboard.width, Vestaboard.height, {
 				horizontalCenter: true,
 				verticalCenter: true,
@@ -51,7 +54,7 @@ if (Astro.request.method === "POST") {
 					},
 					body: JSON.stringify({
 						display: vb.current,
-						message,
+						message: asciiMessage,
 						wrapped: result,
 					}),
 				});
@@ -68,7 +71,7 @@ if (Astro.request.method === "POST") {
 	} catch (err) {
 		invariant(err instanceof Error, 'Expected an error to be an instance of Error');
 		if (err instanceof UnsupportedChar) {
-			error = 'A character in your message is not supported by the board: ' + err.char
+			error = 'A character in your message is not supported by the board: ' + JSON.stringify(err.char)
 		} else {
 			error = 'Error: ' + err.toString();
 		}
@@ -108,7 +111,7 @@ export const prerender = false;
 					{sentHtml ? (
 					<pre id="preview" set:html={sentHtml}></pre>
 					) : null}
-					<textarea name="message">{message}</textarea>
+					<textarea name="message">{inputMessage}</textarea>
 					<label>
 						<input type="checkbox" name="useCodes" value="useCodes" checked={useCodes} /> Use codes
 						<span class="tip">(<strong>W</strong>hite, <strong>R</strong>ed, <strong>O</strong>range, <strong>Y</strong>ellow, <strong>G</strong>reen,
