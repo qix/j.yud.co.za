@@ -4,6 +4,7 @@ import { invariant } from "../jslib/invariant";
 
 import {Vestaboard} from "../jslib/Vestaboard"
 import { attemptWrap } from "../jslib/wrap";
+import anyAscii from 'any-ascii';
 
 let sentHtml = "";
 let message = "";
@@ -25,13 +26,12 @@ if (Astro.request.method === "POST") {
 		useCodes = data.get('useCodes') ? true : false;
 
 		if (msg) {
-
-			message = msg.toString();
+			message = anyAscii(msg.toString());
 
 			const vb = new Vestaboard();
 
 			const {result, complete} = attemptWrap(
-				useCodes ? msg.toString() : msg.toString().toLowerCase(),
+				useCodes ? message : message.toLowerCase(),
 				Vestaboard.width, Vestaboard.height, {
 				horizontalCenter: true,
 				verticalCenter: true,
@@ -52,7 +52,7 @@ if (Astro.request.method === "POST") {
 					},
 					body: JSON.stringify({
 						display: vb.current,
-						message: msg.toString(),
+						message,
 						wrapped: result,
 					}),
 				});

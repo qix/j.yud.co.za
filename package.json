@@ -12,6 +12,7 @@
     "@astrojs/vercel": "^8.0.1",
     "@types/ansi-html": "^0.0.0",
     "ansi-html": "^0.0.9",
+    "any-ascii": "^0.3.2",
     "astro": "^5.1.0"
   }
 }
