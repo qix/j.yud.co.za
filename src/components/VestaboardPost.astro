@@ -2,7 +2,7 @@
 import background from "../assets/background.svg";
 import { invariant } from "../jslib/invariant";
 
-import {Vestaboard} from "../jslib/Vestaboard"
+import {UnsupportedChar, Vestaboard} from "../jslib/Vestaboard"
 import { attemptWrap } from "../jslib/wrap";
 import anyAscii from 'any-ascii';
 
@@ -40,7 +40,6 @@ if (Astro.request.method === "POST") {
 			if (!complete) {
 				error = 'Message is too long to fit on the Vestaboard';
 			}else {
-			try {
 				vb.write(0,0, result);
 				sentHtml = vb.htmlString();
 
@@ -59,18 +58,19 @@ if (Astro.request.method === "POST") {
 
 				if (!response.ok) {
 					throw new Error('Failed to send message to Vestaboard');
+				
 				}
 			}
+		}
+			
 
-			} catch (err) {
-				invariant(err instanceof Error, 'Expected an error to be an instance of Error');
-				error = err.toString();
-			}
 		}
-		}
-	} catch (error) {
-		if (error instanceof Error) {
-			console.error(error.message);
+	} catch (err) {
+		invariant(err instanceof Error, 'Expected an error to be an instance of Error');
+		if (err instanceof UnsupportedChar) {
+			error = 'A character in your message is not supported by the board: ' + err.char
+		} else {
+			error = 'Error: ' + err.toString();
 		}
 	}
 }

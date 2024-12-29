@@ -81,14 +81,17 @@ export const VestaCode = {
   F: 71, // Filled
 };
 export type VestaCell = keyof typeof VestaCode;
-
+export class UnsupportedChar extends Error {
+  constructor(readonly char: string) {
+    super(`Unsupported vestaboard character: ${char}`);
+  }
+}
 function splitCells(cells: string | VestaCell[]): VestaCell[] {
   if (typeof cells === "string") {
     return cells.split("").map((cell) => {
-      invariant(
-        VestaCode.hasOwnProperty(cell),
-        "Unsupported code: " + JSON.stringify(cell)
-      );
+      if (!VestaCode.hasOwnProperty(cell)) {
+        throw new UnsupportedChar(cell)
+      }
       return cell as VestaCell;
     });
   }
